@@ -2,6 +2,17 @@
 from dataclasses import dataclass
 from typing import Optional, Union
 
+@dataclass
+class Role:
+    credit_id: Optional[str]
+    character: Optional[str]
+    episode_count: Optional[int]
+
+@dataclass
+class Job:
+    credit_id: Optional[str]
+    job: Optional[str]
+    episode_count: Optional[int]
 
 @dataclass
 class Credit:
@@ -13,6 +24,7 @@ class Credit:
     department: Optional[str]
     gender: Optional[int]
     job: Optional[str]
+    jobs: Optional[list[Job]]
     known_for_department: Optional[str]
     name: Optional[str]
     order: Optional[int]
@@ -23,7 +35,7 @@ class Credit:
     release_date: Optional[str]
     vote_count: Optional[int]
     video: Optional[bool]
-    vote_average: Union[int, float]
+    vote_average: Optional[Union[int, float]]
     genre_ids: Optional[list[int]]
     original_language: Optional[str]
     original_title: Optional[str]
@@ -34,6 +46,7 @@ class Credit:
     origin_country: Optional[list[str]]
     media_type: Optional[str]
     first_air_drop: Optional[str]
+    roles: Optional[Union[Role,list[Role]]]
     
 
 

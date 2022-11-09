@@ -120,6 +120,8 @@ class PersonPopular:
     name: Optional[str]
     popularity: Optional[float]
     profile_path: Optional[str]
+    credit_id: Optional[str]
+
 
 @dataclass
 class PersonPopulars:

@@ -107,3 +107,4 @@ ENV/
 
 #tests_key
 /tests/keys.py
+/tmdb_api/tmdb/session_id.pkl

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from dataclasses import dataclass
-from typing import Optional
+from typing import Optional, Union
 
 
 @dataclass
@@ -11,7 +11,7 @@ class ExternalIDs:
     imdb_id: Optional[str]
     instagram_id: Optional[str]
     tvdb_id: Optional[int]
-    tvrage_id: Optional[str]
+    tvrage_id: Optional[Union[str,int]]
     twitter_id: Optional[str]
 
     @property
