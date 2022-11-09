@@ -1,15 +1,12 @@
-import textwrap
 from typing import Any
-from tmdb_api.data.movie import ModelMovies
 from tmdb_api.data.review import Review
 from tmdb_api.tmdb.base import TMDb
 from tmdb_api.tmdb.datatype import Datatype, ModelDatatype
-from tmdb_api.tmdb.excep import TMDbException
 from tmdb_api.tmdb.request import  GetRequest
 
 class Reviews(TMDb):
     '''
-    Trendings Class
+    Reviews Class
     '''
     def get_reviews(
         self,

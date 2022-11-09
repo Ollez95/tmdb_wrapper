@@ -31,7 +31,7 @@ class Media:
     media_type: Optional[str]
     name: Optional[str]
     list_type: Optional[str]
-    origin_country: Optional[list[str]]
+    origin_country: Optional[Union[list[str],str]]
     original_language: Optional[str]
     original_name: Optional[str]
     original_title: Optional[str]
