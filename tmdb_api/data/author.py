@@ -4,7 +4,7 @@ from typing import Optional
 
 @dataclass
 class AuthorDetails:
-    name: Optional[int]
+    name: Optional[str]
     username: Optional[str]
     avatar_path: Optional[str]
-    rating: Optional[int]
+    rating: Optional[float]
