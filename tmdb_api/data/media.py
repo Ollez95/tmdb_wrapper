@@ -23,7 +23,7 @@ class Media:
     episodes: Optional[list[str]]
     episode_count: Optional[int]
     episode_number: Optional[int]
-    first_air_date: Optional[date]
+    first_air_date: Optional[str]
     favourite_count: Optional[int]
     genre_ids: Optional[list[Union[int, float]]]
     item_count: Optional[int]

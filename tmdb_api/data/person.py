@@ -27,11 +27,11 @@ class PersonProfile:
     file_path: Optional[str]
     aspect_ratio: Optional[str]
     height: Optional[int]
-    iso_639_1: Optional[None]
-    vote_average: Union[float,int]
+    iso_639_1: Optional[str]
+    vote_average: Optional[float]
     vote_count: Optional[int]
     width: Optional[int]
-    id: Optional[str]
+    id: Optional[int]
     image_type: Optional[str]
     media: Optional[Media]
     media_type: Optional[str]
@@ -64,8 +64,8 @@ class PersonChanges:
 
 @dataclass
 class PersonCredits:
-    cast: Optional[Credit]
-    crew: Optional[Credit]
+    cast: Optional[list[Credit]]
+    crew: Optional[list[Credit]]
     id: Optional[int]
 
 
@@ -88,7 +88,7 @@ class Person:
     birthday: Optional[str]
     known_for_department: Optional[str]
     deathday: Optional[str]
-    also_known_as: Optional[str]
+    also_known_as: Optional[list[str]]
     gender: Optional[int]
     biography: Optional[str]
     popularity: Optional[float]
@@ -99,14 +99,27 @@ class Person:
     homepage: Optional[set]
 
 
+@dataclass
+class GetCredits:
+    id: Optional[str]
+    credit_type: Optional[str]
+    department: Optional[str]
+    job: Optional[str]
+    media: Optional[Media]
+    media_type: Optional[str]
+    person: Optional[Person]
+
+@dataclass
 class PersonPopular:
 
-    profile_path: Optional[str]
     adult: Optional[bool]
+    gender: Optional[int]
     id: Optional[int]
-    known_for: Optional[Media]
+    known_for: Optional[list[Media]]
+    known_for_department: Optional[str]
     name: Optional[str]
     popularity: Optional[float]
+    profile_path: Optional[str]
 
 @dataclass
 class PersonPopulars:

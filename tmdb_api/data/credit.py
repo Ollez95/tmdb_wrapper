@@ -2,8 +2,6 @@
 from dataclasses import dataclass
 from typing import Optional, Union
 
-from tmdb_api.data.media import Media
-from tmdb_api.data.person import Person
 
 @dataclass
 class Credit:
@@ -32,7 +30,7 @@ class Credit:
     backdrop_path: Optional[str]
     overview: Optional[str]
     poster_path: Optional[str]
-    episode_count: Optional[str]
+    episode_count: Optional[int]
     origin_country: Optional[list[str]]
     media_type: Optional[str]
     first_air_drop: Optional[str]
@@ -66,14 +64,6 @@ class Credits:
             return [str(person) for person in self.crew if person.is_director()]
 
 
-@dataclass
-class GetCredits:
-    id: Optional[str]
-    credit_type: Optional[str]
-    department: Optional[str]
-    job: Optional[str]
-    media: Optional[Media]
-    media_type: Optional[str]
-    person: Optional[Person]
+
 
 

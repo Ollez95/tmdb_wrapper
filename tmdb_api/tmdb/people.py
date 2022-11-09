@@ -241,4 +241,6 @@ class People(TMDb):
             path = "/person/popular",
             page = page)
 
+        print(parse_data)
+
         return datatype.to_datatype(parse_data = parse_data, model_data = PersonPopulars)

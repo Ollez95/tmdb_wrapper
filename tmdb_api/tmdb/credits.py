@@ -1,8 +1,8 @@
 from typing import Any
-from tmdb_api.data.credit import GetCredits
+from tmdb_api.data.person import GetCredits
 from tmdb_api.tmdb.datatype import Datatype, ModelDatatype
 from tmdb_api.tmdb.request import GetRequest
-from .base import TMDb
+from tmdb_api.tmdb.base import TMDb
 
 class Credits(TMDb):
     '''
