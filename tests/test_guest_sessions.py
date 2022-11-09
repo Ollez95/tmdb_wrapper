@@ -1,9 +1,9 @@
 import unittest
-from tmdb_api.tmdb.authentication import Authentication
-from tmdb_api.tmdb.base import TMDb
+from tmdb_wrapper.tmdb.authentication import Authentication
+from tmdb_wrapper.tmdb.base import TMDb
 from keys import API_KEY, ERROR_MOVIE, LANGUAGE, REGION, USERNAME, PASSWORD
-from tmdb_api.tmdb.datatype import PrettifyDatatype
-from tmdb_api.tmdb.guest_sessions import GuestSessions
+from tmdb_wrapper.tmdb.datatype import PrettifyDatatype
+from tmdb_wrapper.tmdb.guest_sessions import GuestSessions
 
 class TestTMDb_GuestSessions(unittest.TestCase):
 

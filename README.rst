@@ -1,5 +1,5 @@
 ========
-TMDB API
+TMDB Wrapper API
 ========
 
 

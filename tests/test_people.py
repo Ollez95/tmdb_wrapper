@@ -3,8 +3,8 @@ import unittest
 
 from keys import API_KEY, LANGUAGE, REGION, ERROR_MOVIE
 
-from tmdb_api.tmdb.base import TMDb
-from tmdb_api.tmdb.people import People
+from tmdb_wrapper.tmdb.base import TMDb
+from tmdb_wrapper.tmdb.people import People
 
 class TestTMDb_People(unittest.TestCase):
     """Tests for `tmdb_api` package."""

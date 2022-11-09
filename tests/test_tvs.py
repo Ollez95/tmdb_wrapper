@@ -1,8 +1,8 @@
 import unittest
-from tmdb_api.tmdb.authentication import Authentication
-from tmdb_api.tmdb.base import TMDb
+from tmdb_wrapper.tmdb.authentication import Authentication
+from tmdb_wrapper.tmdb.base import TMDb
 from keys import API_KEY, ERROR_MOVIE, LANGUAGE, REGION, USERNAME, PASSWORD
-from tmdb_api.tmdb.tvs import Tvs
+from tmdb_wrapper.tmdb.tvs import Tvs
 
 class TestTMDb_Tvs(unittest.TestCase):
 

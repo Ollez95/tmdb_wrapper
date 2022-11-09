@@ -1,8 +1,8 @@
 import unittest
-from tmdb_api.tmdb.authentication import Authentication
-from tmdb_api.tmdb.base import TMDb
-from tmdb_api.tmdb.account import Account
-from tmdb_api.tmdb.datatype import PrettifyDatatype
+from tmdb_wrapper.tmdb.authentication import Authentication
+from tmdb_wrapper.tmdb.base import TMDb
+from tmdb_wrapper.tmdb.account import Account
+from tmdb_wrapper.tmdb.datatype import PrettifyDatatype
 from keys import API_KEY, ERROR_MOVIE, LANGUAGE, REGION, USERNAME, PASSWORD
 
 class TestTMDb_Account(unittest.TestCase):

@@ -1,8 +1,8 @@
 import unittest
 
-from tmdb_api.tmdb.base import TMDb
-from tmdb_api.tmdb.certifications import Certifications
-from tmdb_api.tmdb.datatype import PrettifyDatatype
+from tmdb_wrapper.tmdb.base import TMDb
+from tmdb_wrapper.tmdb.certifications import Certifications
+from tmdb_wrapper.tmdb.datatype import PrettifyDatatype
 from keys import API_KEY, ERROR_MOVIE, LANGUAGE, REGION
 
 class TestTMDb_Certifications(unittest.TestCase):

@@ -1,8 +1,8 @@
 import unittest
 
-from tmdb_api.tmdb.configurations import Configurations
-from tmdb_api.tmdb.base import TMDb
-from tmdb_api.tmdb.datatype import PrettifyDatatype
+from tmdb_wrapper.tmdb.configurations import Configurations
+from tmdb_wrapper.tmdb.base import TMDb
+from tmdb_wrapper.tmdb.datatype import PrettifyDatatype
 from keys import API_KEY, ERROR_MOVIE, LANGUAGE, REGION
 
 class TestTMDb_Configuration(unittest.TestCase):

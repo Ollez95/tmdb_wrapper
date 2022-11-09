@@ -4,9 +4,9 @@ import unittest
 
 from keys import API_KEY, LANGUAGE, REGION, ERROR_MOVIE
 
-from tmdb_api.tmdb.base import TMDb
-from tmdb_api.tmdb.genres import Genres
-from tmdb_api.tmdb.datatype import PrettifyDatatype
+from tmdb_wrapper.tmdb.base import TMDb
+from tmdb_wrapper.tmdb.genres import Genres
+from tmdb_wrapper.tmdb.datatype import PrettifyDatatype
 
 
 class TestTMDb_Genres(unittest.TestCase):
