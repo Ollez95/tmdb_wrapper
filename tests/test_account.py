@@ -5,6 +5,11 @@ from tmdb_wrapper.tmdb.account import Account
 from tmdb_wrapper.tmdb.datatype import PrettifyDatatype
 from keys import API_KEY, ERROR_MOVIE, LANGUAGE, REGION, USERNAME, PASSWORD
 
+import sys
+
+sys.path.append("./")
+print(sys.path)
+
 class TestTMDb_Account(unittest.TestCase):
 
     def setUp(self):

@@ -23,13 +23,15 @@ class Authentication(TMDb):
     def __init__(
         self,
         username: str = None,
-        password: str = None):
+        password: str = None,
+        route: str = "session_id.pkl"):
 
         super().__init__()
         self.username = username if username is not None else os.environ.get(self.TMDB_USERNAME, "username")
         self.password = password if password is not None else os.environ.get(self.TMDB_PASSWORD, "password")
         self.expires_at = None
         self.request_token = None
+        self.route = route
 
 
     def initialize_session_id(
@@ -44,13 +46,14 @@ class Authentication(TMDb):
             self.request_guest_session()
         elif type_session == user_session:
             try:
-                session_information, same_id = read_pickle()
+                session_information, same_id = read_pickle(route = self.route)
                 self.user_session(
                     session_information=session_information,
                     same_id=same_id)
             except OSError:
-                print('aa')
-                self.create_new_user_session()
+                self.create_new_user_session(
+                    route = self.route
+                )
         else:
             raise TMDbException("You can only select 'guest_session' or 'user_session'")
 
@@ -146,17 +149,21 @@ class Authentication(TMDb):
             os.environ[self.TMDB_SESSION_ID], os.environ[self.TMDB_TYPE_SESSION] = self.session_id, user_session
 
         else:
-            self.create_new_user_session()
+            self.create_new_user_session(
+                route = self.route
+            )
             os.environ[self.TMDB_SESSION_ID], os.environ[self.TMDB_TYPE_SESSION] = self.session_id, user_session
 
-    def create_new_user_session(self):
+    def create_new_user_session(
+        self,
+        route: str):
         '''
         Creates a new user session id.
         '''
 
         self.request_token = self.get_request_token()['request_token']
         user_session_resp = self.post_create_session_with_login()
-        self.expires_at = user_session_resp['expires_at'] 
+        self.expires_at = user_session_resp['expires_at']
         self.request_token = user_session_resp['request_token']
         self.session_id = self.post_create_session()['session_id']
         new_session_create = {
@@ -164,7 +171,9 @@ class Authentication(TMDb):
             'expires_at': self.expires_at,
             'request_token': self.request_token
         }
-        save_pickle(new_session_create)
+        save_pickle(
+            data = new_session_create,
+            route = self.route)
 
     def get_request_token(
         self,
@@ -251,7 +260,7 @@ class Authentication(TMDb):
                     "session_id": self.session_id
                     })
 
-            os.remove("tmdb_api/utils/session_id.pkl")
+            os.remove(self.route)
             return datatype.to_datatype(parse_data = parse_data, model_data = RequestTokenAuthentication)
         except FileNotFoundError:
             print("Create a new session!!!")

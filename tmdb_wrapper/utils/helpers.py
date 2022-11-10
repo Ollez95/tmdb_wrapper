@@ -1,9 +1,8 @@
 import pickle
 from datetime import datetime
-from .constants import route
 
 
-def read_pickle() -> dict:
+def read_pickle(route: str) -> dict:
     '''
     load pickle file
     '''
@@ -12,7 +11,7 @@ def read_pickle() -> dict:
 
     return dct, compare_dates(dct['expires_at'])
 
-def save_pickle(data: dict) -> pickle:
+def save_pickle(data: dict, route: str) -> pickle:
     '''
     save pickle file
     '''

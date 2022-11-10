@@ -1,3 +1,8 @@
+import sys
+import os
+
+from pathlib import Path
+
 import unittest
 from tmdb_wrapper.tmdb.authentication import Authentication
 
@@ -7,6 +12,9 @@ from tmdb_wrapper.tmdb.datatype import PrettifyDatatype
 from keys import API_KEY, ERROR_MOVIE, LANGUAGE, REGION, USERNAME, PASSWORD
 
 import sys
+
+sys.path.append("./")
+print(sys.path)
 
 
 class TestTMDb_Authentication(unittest.TestCase):
@@ -40,15 +48,11 @@ class TestTMDb_Authentication(unittest.TestCase):
         '''
         test_authentication
         '''
-        print(sys.path)
-
         authentication = Authentication()
         authentication.username = USERNAME
         authentication.password = PASSWORD
 
         authentication.initialize_session_id(type_session="user_session")
-
-        print(sys.path)
 
         print(authentication.expires_at)
         print(authentication.session_id)
