@@ -1,4 +1,3 @@
-import textwrap
 from typing import Any
 from tmdb_wrapper.data.movie import ModelMovies
 from tmdb_wrapper.tmdb.base import TMDb

@@ -19,7 +19,6 @@ from tmdb_wrapper.data.credit import Credit
 from tmdb_wrapper.data.translation import Translation
 from tmdb_wrapper.data.video import Video
 
-
 @dataclass
 class TvEpisode:
     air_date: Optional[str]
@@ -32,6 +31,11 @@ class TvEpisode:
     still_path: Optional[str]
     vote_average: Optional[float]
     vote_count: Optional[int]
+    crew: Optional[list[Credit]]
+    guest_stars: Optional[list[Credit]]
+    order: Optional[bool]
+    show_id: Optional[int]
+    
 
 @dataclass
 class Tv:
@@ -89,16 +93,17 @@ class Tv:
     
 @dataclass
 class TvAccountState:
-     id: Optional[int]
-     favorite: Optional[int]
-     rated: Optional[bool]
-     watchlist: Optional[bool]
+    id: Optional[int]
+    favorite: Optional[int]
+    rated: Optional[bool]
+    watchlist: Optional[bool]
 
 @dataclass
 class TvCredits:
-     id: Optional[int]
-     cast: Optional[list[Credit]]
-     crew: Optional[list[Credit]]
+    id: Optional[int]
+    cast: Optional[list[Credit]]
+    crew: Optional[list[Credit]]
+    guest_stars: Optional[list[Credit]]
 
 @dataclass
 class TvAlternativeTitle:
@@ -113,10 +118,19 @@ class TvAlternativeTitles:
     results: Optional[list[TvAlternativeTitle]]
 
 @dataclass
+class TvSeasonValue:
+    episode_id: Optional[int]
+    episode_number: Optional[int]
+
+
+@dataclass
 class TvItems:
     id: Optional[str]
     action: Optional[str]
     time: Optional[str]
+    value: Optional[TvSeasonValue]
+    iso_639_1: Optional[str]
+    original_value: Optional[str]
 
 
 @dataclass
@@ -132,12 +146,21 @@ class TvChanges:
 class TvRating:
     iso_3166_1: Optional[str]
     rating: Optional[str]
+    value: Optional[int]
 
 @dataclass
 class TvRatings:
     id: Optional[int]
     results: Optional[list[TvRating]]
 
+
+@dataclass
+class TvGroup:
+    id: Optional[str]
+    name: Optional[str]
+    order: Optional[int]
+    episodes: Optional[list[TvEpisode]]
+    locked: Optional[bool]
 
 @dataclass
 class TvEpisodeGroup:
@@ -148,6 +171,7 @@ class TvEpisodeGroup:
     name: Optional[str]
     network: Optional[Network]
     type: Optional[int]
+    groups: Optional[list[TvGroup]]
 
 @dataclass
 class TvEpisodeGroups:
@@ -209,3 +233,53 @@ class TvAiring:
     results: Optional[list[Tv]]
     total_pages: Optional[int]
     total_results: Optional[int]
+
+
+@dataclass
+class TvSeason:
+    _id: Optional[str]
+    air_date: Optional[str]
+    episodes: Optional[list[TvEpisode]]
+    name: Optional[str]
+    overview: Optional[str]
+    id: Optional[int]
+    poster_path: Optional[str]
+    season_number: Optional[int]
+
+
+@dataclass
+class TvSeasonRated:
+    value: Optional[int]
+
+@dataclass
+class TvSeasonAccountState:
+    id: Optional[int]
+    episode_number: Optional[int]
+    rated: Optional[TvSeasonRated]
+
+@dataclass
+class TvSeasonAccountStates:
+    id: Optional[int]
+    results: Optional[list[TvSeasonAccountState]]
+
+@dataclass
+class TvSeasonEpisodeState:
+    id: Optional[int]
+    rated: Optional[bool]
+
+@dataclass
+class TvEpisodeSeason:
+    air_date: Optional[str]
+    crew: Optional[list[Credit]]
+    episode_number: Optional[int]
+    guest_starts: Optional[list[Credit]]
+    name: Optional[str]
+    overview: Optional[str]
+    id: Optional[int]
+    production_code: Optional[str]
+    season_number: Optional[int]
+    still_path: Optional[str]
+    vote_average: Optional[float]
+    vote_count: Optional[int]
+    poster_path: Optional[str]
+    season_number: Optional[int]

@@ -1,10 +1,7 @@
-import textwrap
 from typing import Any
-from tmdb_wrapper.data.review import Review
 from tmdb_wrapper.data.search import Search, SearchMulti
 from tmdb_wrapper.tmdb.base import TMDb
 from tmdb_wrapper.tmdb.datatype import Datatype, ModelDatatype
-from tmdb_wrapper.tmdb.excep import TMDbException
 from tmdb_wrapper.tmdb.request import  GetRequest
 
 class Searches(TMDb):

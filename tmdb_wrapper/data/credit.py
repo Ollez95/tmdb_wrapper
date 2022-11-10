@@ -48,6 +48,7 @@ class Credit:
     first_air_drop: Optional[str]
     roles: Optional[Union[Role,list[Role]]]
     
+    
 
 
 

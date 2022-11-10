@@ -1,4 +1,3 @@
-from ctypes import Union
 from dataclasses import dataclass
 from typing import List, Optional
 from tmdb_wrapper.data.media import Media

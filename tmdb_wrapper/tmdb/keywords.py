@@ -1,5 +1,4 @@
 from typing import Any
-from tmdb_wrapper.data.genre import Genre
 from tmdb_wrapper.data.keyword import Keyword
 from tmdb_wrapper.data.movie import ModelMovies
 from tmdb_wrapper.tmdb.datatype import Datatype, ModelDatatype

@@ -1,4 +1,3 @@
-from tkinter import N
 from typing import Any
 from tmdb_wrapper.data.discover import Discover
 from tmdb_wrapper.tmdb.datatype import Datatype, ModelDatatype

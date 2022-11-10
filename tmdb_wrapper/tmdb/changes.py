@@ -1,5 +1,5 @@
 from typing import Any
-from tmdb_wrapper.data.movie import ModelMovies, Movie
+from tmdb_wrapper.data.movie import ModelMovies
 from tmdb_wrapper.tmdb.datatype import Datatype, ModelDatatype
 from tmdb_wrapper.tmdb.request import GetRequest
 from .base import TMDb

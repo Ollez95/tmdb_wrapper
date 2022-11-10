@@ -13,6 +13,7 @@ class ExternalIDs:
     tvdb_id: Optional[int]
     tvrage_id: Optional[Union[str,int]]
     twitter_id: Optional[str]
+    id: Optional[int]
 
     @property
     def facebook(self) -> Optional[str]:

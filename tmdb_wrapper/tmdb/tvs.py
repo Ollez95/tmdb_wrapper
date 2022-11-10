@@ -1,16 +1,13 @@
 from typing import Any
 from tmdb_wrapper.data.image import Images
-
 from tmdb_wrapper.tmdb.authentication import Authentication
-
 from tmdb_wrapper.data.external_id import ExternalIDs
 from tmdb_wrapper.data.keyword import Keywords
-from tmdb_wrapper.data.tv import Tv, TvAccountState, TvAiring, TvAlternativeTitles, TvChanges, TvCredits, TvEpisodeGroups, TvRatings, TvRecommendations, TvScreens, TvSimilars, TvTranslations, TvVideos
+from tmdb_wrapper.data.tv import Tv, TvAccountState, TvAiring, TvAlternativeTitles, TvChanges, TvCredits, TvEpisodeGroups, TvRatings, TvRecommendations, TvResponse, TvScreens, TvSimilars, TvTranslations, TvVideos
 from tmdb_wrapper.tmdb.datatype import Datatype, ModelDatatype
 from tmdb_wrapper.tmdb.excep import TMDbException
-
 from tmdb_wrapper.utils.constants import url_header_encoded
-
+from tmdb_wrapper.utils.helpers import init_session_type
 from .request import DeleteRequest, GetRequest, PostRequest
 
 class Tvs(Authentication):
@@ -57,18 +54,20 @@ class Tvs(Authentication):
         See more: https://developers.themoviedb.org/3/movies/get-movie-details
         '''
 
-        def init_session_type(**kwargs):
-            return self.request_data(
-                request_operation = GetRequest(),
-                path = f"/tv/{tv_id}/account_states",
-                append_to_response = append_to_response,
-                **kwargs)
+        def aux_init_session_type(**kwargs):
+            return init_session_type(
+                        request_data = self.request_data,
+                        request_operation= GetRequest(),
+                        path = f"/tv/{tv_id}/account_states",
+                        append_to_response = append_to_response,
+                        **kwargs
+                        )
 
         if self.type_session == "guest_session":
-            parse_data = init_session_type(guest_session_id = self.session_id)
+            parse_data = aux_init_session_type(guest_session_id = self.session_id)
 
         else:
-            parse_data = init_session_type(session_id = self.session_id)
+            parse_data = aux_init_session_type(session_id = self.session_id)
 
         return datatype.to_datatype(parse_data = parse_data, model_data = TvAccountState)
 
@@ -379,26 +378,28 @@ class Tvs(Authentication):
         See more: https://developers.themoviedb.org/3/tv/rate-tv-show
         '''
 
-        def init_session_type(**kwargs):
-            return self.request_data(
-                request_operation = PostRequest(),
-                path = f"/tv/{tv_id}/rating",
-                data = {
-                "value":value
-                },
-                headers=url_header_encoded,
-                **kwargs)
+        def aux_init_session_type(**kwargs):
+            return init_session_type(
+                        request_data = self.request_data,
+                        request_operation= PostRequest(),
+                        path = f"/tv/{tv_id}/rating",
+                        data = {
+                        "value":value
+                        },
+                        headers=url_header_encoded,
+                        **kwargs
+                        )
 
         if self.type_session == "guest_session":
-            parse_data = init_session_type(guest_session_id = self.session_id)
+            parse_data = aux_init_session_type(guest_session_id = self.session_id)
 
         else:
-            parse_data = init_session_type(session_id = self.session_id)
+            parse_data = aux_init_session_type(session_id = self.session_id)
 
 
         return datatype.to_datatype(
             parse_data = parse_data,
-            model_data = TvVideos)
+            model_data = TvResponse)
 
     def delete_video(
         self,
@@ -410,23 +411,25 @@ class Tvs(Authentication):
         See more: https://developers.themoviedb.org/3/tv/rate-tv-show
         '''
 
-        def init_session_type(**kwargs):
-            return self.request_data(
-                request_operation = DeleteRequest(),
-                path = f"/tv/{tv_id}/rating",
-                headers=url_header_encoded,
-                **kwargs)
+        def aux_init_session_type(**kwargs):
+            return init_session_type(
+                        request_data = self.request_data,
+                        request_operation= DeleteRequest(),
+                        path = f"/tv/{tv_id}/rating",
+                        headers=url_header_encoded,
+                        **kwargs
+                        )
 
         if self.type_session == "guest_session":
-            parse_data = init_session_type(guest_session_id = self.session_id)
+            parse_data = aux_init_session_type(guest_session_id = self.session_id)
 
         else:
-            parse_data = init_session_type(session_id = self.session_id)
+            parse_data = aux_init_session_type(session_id = self.session_id)
 
 
         return datatype.to_datatype(
             parse_data = parse_data,
-            model_data = TvVideos)
+            model_data = TvResponse)
 
     def get_latest(
         self,

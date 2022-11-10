@@ -1,10 +1,8 @@
 import textwrap
 from typing import Any
-from tmdb_wrapper.data.movie import ModelMovies
 from tmdb_wrapper.data.person import Person, PersonChanges, PersonCredits, PersonExternalIds, PersonPopulars, PersonProfile, PersonTaggedImages, PersonTranslations
 from tmdb_wrapper.tmdb.base import TMDb
 from tmdb_wrapper.tmdb.datatype import Datatype, ModelDatatype
-from tmdb_wrapper.tmdb.excep import TMDbException
 from tmdb_wrapper.tmdb.request import  GetRequest
 
 class People(TMDb):

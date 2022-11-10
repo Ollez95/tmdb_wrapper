@@ -20,3 +20,4 @@ class Images:
     logos: Optional[list[Image]]
     posters: Optional[list[Image]]
     profiles: Optional[list[Image]]
+    stills: Optional[list[Image]]
