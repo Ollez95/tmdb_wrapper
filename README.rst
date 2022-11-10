@@ -3,8 +3,8 @@ TMDB Wrapper API
 ========
 
 
-.. image:: https://img.shields.io/pypi/v/tmdb_api.svg
-        :target: https://pypi.python.org/pypi/tmdb_api
+.. image:: https://img.shields.io/pypi/v/tmdb-wrapper.svg
+        :target: https://pypi.org/project/tmdb-wrapper
 
 .. image:: https://img.shields.io/travis/gus/tmdb_api.svg
         :target: https://travis-ci.com/gus/tmdb_api
