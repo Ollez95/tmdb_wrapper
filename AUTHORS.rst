@@ -5,7 +5,7 @@ Credits
 Development Lead
 ----------------
 
-* Gustavo Lorena <gustalorena@hotmail.com>
+* Ollez95 <gustalorena@hotmail.com>
 
 Contributors
 ------------

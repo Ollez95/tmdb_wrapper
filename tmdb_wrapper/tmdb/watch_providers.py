@@ -1,6 +1,6 @@
 from typing import Any
 from tmdb_wrapper.data import watch_provider
-from tmdb_wrapper.data.watch_provider import  WatchMovieProviders, WatchProviderRegion
+from tmdb_wrapper.data.watch_provider import  WatchMovieProviders, WatchProviderRegion, WatchTvProviders
 from tmdb_wrapper.tmdb.base import TMDb
 from tmdb_wrapper.tmdb.datatype import Datatype, ModelDatatype
 
@@ -53,4 +53,4 @@ class WatchProviders(TMDb):
             request_operation = GetRequest(),
             path = "/watch/providers/tv")
 
-        return datatype.to_datatype(parse_data = parse_data, model_data = watch_provider)
+        return datatype.to_datatype(parse_data = parse_data, model_data = WatchTvProviders)

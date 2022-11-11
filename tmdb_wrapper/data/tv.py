@@ -33,7 +33,7 @@ class TvEpisode:
     vote_count: Optional[int]
     crew: Optional[list[Credit]]
     guest_stars: Optional[list[Credit]]
-    order: Optional[bool]
+    order: Optional[Union[int,bool]]
     show_id: Optional[int]
     
 
