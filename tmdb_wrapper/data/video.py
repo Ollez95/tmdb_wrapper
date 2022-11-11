@@ -12,7 +12,7 @@ class Video:
     key: Optional[str]
     name: Optional[str]
     official: Optional[bool]
-    published_at: Optional[date]
+    published_at: Optional[str]
     site: Optional[str]
     size: Optional[int]
     type: Optional[str]

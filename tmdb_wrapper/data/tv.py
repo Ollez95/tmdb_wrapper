@@ -95,7 +95,7 @@ class Tv:
 class TvAccountState:
     id: Optional[int]
     favorite: Optional[int]
-    rated: Optional[bool]
+    rated: Optional[Union[bool,dict]]
     watchlist: Optional[bool]
 
 @dataclass

@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-import pytest
 import unittest
 
 from keys import API_KEY, LANGUAGE, REGION, ERROR_MOVIE

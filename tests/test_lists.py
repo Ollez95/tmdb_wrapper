@@ -110,7 +110,6 @@ class TestTMDb_Lists(unittest.TestCase):
         """
         test lists delete_list
         """
-        
         lists = Lists()
         response = lists.delete_list(
             list_id=8226293

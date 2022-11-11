@@ -10,7 +10,7 @@ from tmdb_wrapper.data.season import Season
 
 @dataclass
 class Media:
-    id: Optional[Union[int, float]]
+    id: Optional[Union[int, float, str]]
     adult: Optional[bool]
     author: Optional[str]
     author_details: Optional[AuthorDetails]

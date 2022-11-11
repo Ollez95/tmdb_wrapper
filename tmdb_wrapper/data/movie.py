@@ -32,6 +32,14 @@ class ModelMovies:
         return self.results[index]
 
 @dataclass
+class MovieAccountStates:
+    id: Optional[int] 
+    favorite: Optional[bool]
+    rated: Optional[bool]
+    watchlist: Optional[bool]
+    
+
+@dataclass
 class Movie:
     id: Optional[int]
     adult: Optional[bool]

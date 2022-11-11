@@ -6,21 +6,29 @@ from tmdb_wrapper.data.release_date import ReleaseDates
 from tmdb_wrapper.data.review import Reviews
 from tmdb_wrapper.data.translation import Translation
 from tmdb_wrapper.data.video import Videos
+from tmdb_wrapper.tmdb.authentication import Authentication
 from tmdb_wrapper.tmdb.datatype import Datatype, ModelDatatype
-from tmdb_wrapper.data.movie import Movie, ModelMovies
+from tmdb_wrapper.data.movie import Movie, ModelMovies, MovieAccountStates
 from tmdb_wrapper.data.title import Title
 from tmdb_wrapper.data.now_playing import NowPlaying
+from tmdb_wrapper.tmdb.excep import TMDbException
+from tmdb_wrapper.utils.helpers import init_session_type
+from tmdb_wrapper.utils.constants import url_header_encoded
+from tmdb_wrapper.data.tv import TvResponse
 
-from .request import GetRequest
-from .base import TMDb
+from .request import DeleteRequest, GetRequest, PostRequest
 
-class Movies(TMDb):
+class Movies(Authentication):
     '''
     TODO: Get Watch Providers GET
-    TODO: Account States GET
-    TODO: Rate movie POST
-    TODO: Rate movie DELETE
     '''
+    
+    def __init__(self):
+        super().__init__()
+        if self.session_id is None:
+            raise TMDbException("You need to initialize a guest session or user session'")
+    
+    
     def get_details_movie(self, movie_id: int, datatype : Datatype = ModelDatatype()) -> Any:
         '''
         Get all the details about a movie.
@@ -31,6 +39,32 @@ class Movies(TMDb):
         parse_data = self.request_data(request_operation = GetRequest(), path = f"movie/{movie_id}")
 
         return datatype.to_datatype(parse_data = parse_data, model_data = Movie)
+
+    def get_account_states(self, movie_id: int, datatype : Datatype = ModelDatatype()) -> Any:
+        '''
+        Grab the following account states for a session:
+
+        Movie rating
+        If it belongs to your watchlist
+        If it belongs to your favourite list
+
+        See more: https://developers.themoviedb.org/3/movies/get-movie-account-states
+        '''
+        def aux_init_session_type(**kwargs):
+            return init_session_type(
+                        request_data = self.request_data,
+                        request_operation= GetRequest(),
+                        path =f"/movie/{movie_id}/account_states",
+                        **kwargs
+                        )
+
+        if self.type_session == "guest_session":
+            parse_data = aux_init_session_type(guest_session_id = self.session_id)
+
+        else:
+            parse_data = aux_init_session_type(session_id = self.session_id)
+
+        return datatype.to_datatype(parse_data = parse_data, model_data = MovieAccountStates)
 
 
     def get_alternative_titles(self, movie_id: int, datatype : Datatype = ModelDatatype()) -> Any:
@@ -259,6 +293,8 @@ class Movies(TMDb):
             request_operation = GetRequest(),
             path = f"movie/{movie_id}/translations")
 
+        print(parse_data)
+        
         return datatype.to_datatype(
             parse_data = parse_data,
             model_data = Translation)
@@ -281,6 +317,96 @@ class Movies(TMDb):
         return datatype.to_datatype(
             parse_data = parse_data,
             model_data = Videos)
+        
+    def get_watch_providers(
+        self,
+        movie_id: int,
+        datatype: Datatype = ModelDatatype(),
+        include_video_language: str = "en") -> Any:
+        '''
+        Powered by our partnership with JustWatch, you can query this method to get a list
+        of the availabilities per country by provider.
+
+        This is not going to return full deep links, but rather, it's just enough information
+        to display what's available where.
+
+        You can link to the provided TMDB URL to help support TMDB and provide the actual
+        deep links to the content.
+
+        Please note: In order to use this data you must attribute the source of the data as
+        JustWatch. If we find any usage not complying with these terms we will revoke access
+        to the API.
+
+        See more: https://developers.themoviedb.org/3/movies/get-movie-videos
+        '''
+
+    def post_rate_movie(
+        self,
+        movie_id: int,
+        datatype : Datatype = ModelDatatype(),
+        value: float = 0.5) -> Any:
+        '''
+        Rate a movie.
+
+        A valid session or guest session ID is required. You can read more about how this works .
+
+        See more: https://developers.themoviedb.org/3/tv/rate-movie
+        '''
+
+        def aux_init_session_type(**kwargs):
+            return init_session_type(
+                        request_data = self.request_data,
+                        request_operation= PostRequest(),
+                        path = f"/movie/{movie_id}/rating",
+                        data = {
+                        "value":value
+                        },
+                        headers=url_header_encoded,
+                        **kwargs
+                        )
+
+        if self.type_session == "guest_session":
+            parse_data = aux_init_session_type(guest_session_id = self.session_id)
+
+        else:
+            parse_data = aux_init_session_type(session_id = self.session_id)
+
+
+        return datatype.to_datatype(
+            parse_data = parse_data,
+            model_data = TvResponse)
+
+    def delete_video(
+        self,
+        movie_id: int,
+        datatype : Datatype = ModelDatatype()) -> Any:
+        '''
+        Remove your rating for a movie.
+
+        A valid session or guest session ID is required. You can read more about how this works .
+
+        See more: https://developers.themoviedb.org/3/movies/delete-movie-rating
+        '''
+
+        def aux_init_session_type(**kwargs):
+            return init_session_type(
+                        request_data = self.request_data,
+                        request_operation= DeleteRequest(),
+                        path = f"/movie/{movie_id}/rating",
+                        headers=url_header_encoded,
+                        **kwargs
+                        )
+
+        if self.type_session == "guest_session":
+            parse_data = aux_init_session_type(guest_session_id = self.session_id)
+
+        else:
+            parse_data = aux_init_session_type(session_id = self.session_id)
+
+
+        return datatype.to_datatype(
+            parse_data = parse_data,
+            model_data = TvResponse)
 
     def get_latest(
         self,
