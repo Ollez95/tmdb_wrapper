@@ -20,8 +20,10 @@ class TestTMDb_Genres(unittest.TestCase):
         tmdb.region = REGION
     
     
-    def test_discover_movie(self):
-        """Test something."""
+    def test_genres_movie(self):
+        """
+        test genres get_genre_movie
+        """
         
         genres = Genres()
 
@@ -30,12 +32,14 @@ class TestTMDb_Genres(unittest.TestCase):
         )
         assert response != ERROR_MOVIE
 
-    def test_discover_tv(self):
-        """Test something."""
+    def test_genres_tv(self):
+        """
+        test genres get_genre_tv
+        """
         
         genres = Genres()
 
-        response = genres.get_genre_movie(
+        response = genres.get_genre_tv(
             datatype = PrettifyDatatype()
         )
         assert response != ERROR_MOVIE

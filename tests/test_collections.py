@@ -15,7 +15,9 @@ class TestTMDb_Collections(unittest.TestCase):
         self.tmdb.region = REGION
 
     def test_collections_details(self):
-        """Test something."""
+        """
+        test collections get_details_collection
+        """
         certifications = Collections()
         response = certifications.get_details_collection(
             collection_id = 10,
@@ -25,7 +27,9 @@ class TestTMDb_Collections(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_collections_images(self):
-        """Test something."""
+        """
+        test collections get_image_collection
+        """
         certifications = Collections()
         response = certifications.get_image_collection(
             collection_id = 10,
@@ -35,7 +39,9 @@ class TestTMDb_Collections(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_collections_translations(self):
-        """Test something."""
+        """
+        test collections get_translation_collection
+        """
         certifications = Collections()
         response = certifications.get_translation_collection(
             collection_id = 10,

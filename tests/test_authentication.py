@@ -28,10 +28,9 @@ class TestTMDb_Authentication(unittest.TestCase):
 
 
     def test_guest_authentication(self):
-        '''
-        test_authentication
-        '''
-        print(sys.path)
+        """
+        test guest authentication
+        """
 
         authentication = Authentication()
         authentication.username = USERNAME
@@ -45,9 +44,10 @@ class TestTMDb_Authentication(unittest.TestCase):
         print(authentication.session_id)
 
     def test_user_authentication(self):
-        '''
-        test_authentication
-        '''
+        """
+        test user authentication
+        """
+
         authentication = Authentication()
         authentication.username = USERNAME
         authentication.password = PASSWORD
@@ -59,7 +59,10 @@ class TestTMDb_Authentication(unittest.TestCase):
         print(authentication.request_token)
 
     def test_user_delete_session(self):
-
+        """
+        test user delete authentication
+        """
+        
         authentication = Authentication()
         authentication.username = USERNAME
         authentication.password = PASSWORD

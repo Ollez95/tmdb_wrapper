@@ -21,7 +21,9 @@ class TestTMDb_Credits(unittest.TestCase):
     
     
     def test_movie_get_details(self):
-        """Test something."""
+        """
+        test credits get_credit_details
+        """
         
         credit = Credits()
 

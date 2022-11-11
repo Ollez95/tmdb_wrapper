@@ -17,7 +17,9 @@ class TestTMDb_People(unittest.TestCase):
         tmdb.region = REGION
 
     def test_get_people_details(self):
-        """Test something."""
+        """
+        test people get_people_details
+        """
 
         people = People()
 
@@ -30,7 +32,9 @@ class TestTMDb_People(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_people_changes(self):
-        """Test something."""
+        """
+        test people get_people_changes
+        """
 
         people = People()
 
@@ -43,7 +47,9 @@ class TestTMDb_People(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_people_movie_credits(self):
-        """Test something."""
+        """
+        test people get_people_movie_credits
+        """
 
         people = People()
 
@@ -56,7 +62,9 @@ class TestTMDb_People(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_people_tv_credits(self):
-        """Test something."""
+        """
+        test people get_people_tv_credits
+        """
 
         people = People()
 
@@ -69,7 +77,9 @@ class TestTMDb_People(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_people_combined_credits(self):
-        """Test something."""
+        """
+        test people get_people_combined_credits
+        """
 
         people = People()
 
@@ -82,7 +92,9 @@ class TestTMDb_People(unittest.TestCase):
         assert response != ERROR_MOVIE
     
     def test_get_people_external_ids(self):
-        """Test something."""
+        """
+        test people get_people_external_ids
+        """
 
         people = People()
 
@@ -95,7 +107,9 @@ class TestTMDb_People(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_people_images(self):
-        """Test something."""
+        """
+        test people get_people_images
+        """
 
         people = People()
 
@@ -108,7 +122,9 @@ class TestTMDb_People(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_people_translations(self):
-        """Test something."""
+        """
+        test people get_people_translations
+        """
 
         people = People()
 
@@ -121,7 +137,9 @@ class TestTMDb_People(unittest.TestCase):
         assert response != ERROR_MOVIE
     
     def test_get_people_latest(self):
-        """Test something."""
+        """
+        test people get_people_latest
+        """
 
         people = People()
 
@@ -132,7 +150,9 @@ class TestTMDb_People(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_people_popular(self):
-        """Test something."""
+        """
+        test people get_people_popular
+        """
 
         people = People()
 

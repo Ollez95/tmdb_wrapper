@@ -20,7 +20,9 @@ class TestTMDb_TvEpisodes(unittest.TestCase):
         self.authentication.initialize_session_id(type_session="user_session")
 
     def test_get_details(self):
-        """Test something."""
+        """
+        test tv_episode get_details
+        """
     
         tvs_episodes = TvEpisodes()
 
@@ -35,7 +37,9 @@ class TestTMDb_TvEpisodes(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_account_settings(self):
-        """Test something."""
+        """
+        test tv_episode get_account_settings
+        """
     
         tvs_episodes = TvEpisodes()
 
@@ -50,7 +54,9 @@ class TestTMDb_TvEpisodes(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_changes(self):
-        """Test something."""
+        """
+        test tv_episode get_changes
+        """
     
         tvs_episodes = TvEpisodes()
 
@@ -63,7 +69,9 @@ class TestTMDb_TvEpisodes(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_credits(self):
-        """Test something."""
+        """
+        test tv_episode get_credits
+        """
     
         tvs_episodes = TvEpisodes()
 
@@ -78,7 +86,9 @@ class TestTMDb_TvEpisodes(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_external_ids(self):
-        """Test something."""
+        """
+        test tv_episode get_external_ids
+        """
     
         tvs_episodes = TvEpisodes()
 
@@ -93,7 +103,9 @@ class TestTMDb_TvEpisodes(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_images(self):
-        """Test something."""
+        """
+        test tv_episode get_images
+        """
     
         tvs_episodes = TvEpisodes()
 
@@ -108,7 +120,9 @@ class TestTMDb_TvEpisodes(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_translations(self):
-        """Test something."""
+        """
+        test tv_episode get_translations
+        """
     
         tvs_episodes = TvEpisodes()
 
@@ -123,7 +137,9 @@ class TestTMDb_TvEpisodes(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_post_rate_episode(self):
-        """Test something."""
+        """
+        test tv_episode post_rate_episode
+        """
     
         tvs_episodes = TvEpisodes()
 
@@ -139,11 +155,13 @@ class TestTMDb_TvEpisodes(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_delete_video(self):
-        """Test something."""
+        """
+        test tv_episode delete_video
+        """
     
         tvs_episodes = TvEpisodes()
 
-        response = tvs_episodes.post_rate_episode(
+        response = tvs_episodes.delete_video(
             tv_id=11279,
             season_number=1,
             episode_number=1
@@ -154,7 +172,9 @@ class TestTMDb_TvEpisodes(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_videos(self):
-        """Test something."""
+        """
+        test tv_episode get_videos
+        """
     
         tvs_episodes = TvEpisodes()
 

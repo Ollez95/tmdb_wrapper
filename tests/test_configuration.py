@@ -15,7 +15,9 @@ class TestTMDb_Configuration(unittest.TestCase):
         self.tmdb.region = REGION
 
     def test_configurations_first(self):
-        """Test something."""
+        """
+        test configurations get_configuration
+        """
         configurations = Configurations()
         response = configurations.get_configuration(
             datatype = PrettifyDatatype()
@@ -24,7 +26,9 @@ class TestTMDb_Configuration(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_configurations_country(self):
-        """Test something."""
+        """
+        test configurations get_configuration_country
+        """
         configurations = Configurations()
         response = configurations.get_configuration_country(
             datatype = PrettifyDatatype()
@@ -33,7 +37,9 @@ class TestTMDb_Configuration(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_configurations_job(self):
-        """Test something."""
+        """
+        test configurations get_configuration_job
+        """
         configurations = Configurations()
         response = configurations.get_configuration_job(
             datatype = PrettifyDatatype()
@@ -42,7 +48,9 @@ class TestTMDb_Configuration(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_configurations_language(self):
-        """Test something."""
+        """
+        test configurations get_configuration_language
+        """
         configurations = Configurations()
         response = configurations.get_configuration_language(
             datatype = PrettifyDatatype()
@@ -51,7 +59,9 @@ class TestTMDb_Configuration(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_configurations_primary_translations(self):
-        """Test something."""
+        """
+        test configurations get_configuration_primary_translations
+        """
         configurations = Configurations()
         response = configurations.get_configuration_primary_translations(
             datatype = PrettifyDatatype()
@@ -60,7 +70,9 @@ class TestTMDb_Configuration(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_configurations_timezones(self):
-        """Test something."""
+        """
+        test configurations get_configuration_timezones
+        """
         configurations = Configurations()
         response = configurations.get_configuration_timezones(
             datatype = PrettifyDatatype()

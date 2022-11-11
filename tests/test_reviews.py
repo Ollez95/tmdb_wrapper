@@ -17,7 +17,9 @@ class TestTMDb_Reviews(unittest.TestCase):
         tmdb.region = REGION
 
     def test_get_reviews(self):
-        """Test something."""
+        """
+        test reviews get_reviews
+        """
 
         reviews = Reviews()
 

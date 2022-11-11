@@ -15,7 +15,9 @@ class TestTMDb_Companies(unittest.TestCase):
         self.tmdb.region = REGION
 
     def test_companies_details(self):
-        """Test something."""
+        """
+        test companies get_company_details
+        """
         companies = Companies()
         response = companies.get_company_details(
             company_id = 3,
@@ -25,7 +27,9 @@ class TestTMDb_Companies(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_companies_alternative_names(self):
-        """Test something."""
+        """
+        test companies get_company_alternative_names
+        """
         companies = Companies()
         response = companies.get_company_alternative_names(
             company_id = 3,
@@ -35,7 +39,9 @@ class TestTMDb_Companies(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_companies_images(self):
-        """Test something."""
+        """
+        test companies get_company_images
+        """
         companies = Companies()
         response = companies.get_company_images(
             company_id = 3,

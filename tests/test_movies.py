@@ -18,10 +18,12 @@ class TestTMDb_Movies(unittest.TestCase):
         tmdb.api_key = API_KEY
         tmdb.language = LANGUAGE
         tmdb.region = REGION
-    
-    
+
+
     def test_movie_get_details(self):
-        """Test something."""
+        """
+        test movies get_details_movie
+        """
         
         movies = Movies()
 
@@ -33,7 +35,9 @@ class TestTMDb_Movies(unittest.TestCase):
 
 
     def test_movie_alternative_titles(self):
-        """Test movie alternative titles query."""
+        """
+        test movies get_alternative_titles
+        """
         movies = Movies()
         response = movies.get_alternative_titles(
             movie_id=5,
@@ -43,7 +47,9 @@ class TestTMDb_Movies(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_movie_get_changes(self):
-        """Test movie get changes query"""
+        """
+        test movies get_changes
+        """
         movies = Movies()
         response = movies.get_changes(
             movie_id = 111, 
@@ -54,7 +60,9 @@ class TestTMDb_Movies(unittest.TestCase):
         assert str(response) != str(ERROR_MOVIE)
 
     def test_movie_get_credits(self):
-        """Test movie get changes query"""
+        """
+        test movies get_credits
+        """
         movies = Movies()
         response = movies.get_credits(
             movie_id = 111,
@@ -65,7 +73,9 @@ class TestTMDb_Movies(unittest.TestCase):
 
 
     def test_movie_get_external_ids(self):
-        """Test movie get changes query"""
+        """
+        test movies get_external_ids
+        """
         movies = Movies()
         response = movies.get_external_ids(
             movie_id = 111,
@@ -75,7 +85,9 @@ class TestTMDb_Movies(unittest.TestCase):
         assert str(response) != str(ERROR_MOVIE)
 
     def test_movie_get_keywords(self):
-        """Test movie get changes query"""
+        """
+        test movies get_keywords
+        """
         movies = Movies()
         response = movies.get_keywords(
             movie_id = 111,
@@ -86,7 +98,9 @@ class TestTMDb_Movies(unittest.TestCase):
 
 
     def test_movie_get_lists(self):
-        """Test movie get changes query"""
+        """
+        test movies get_lists
+        """
         movies = Movies()
         response = movies.get_lists(
             movie_id = 2,
@@ -97,7 +111,9 @@ class TestTMDb_Movies(unittest.TestCase):
 
 
     def test_movie_get_recommendations(self):
-        """Test movie get changes query"""
+        """
+        test movies get_recommendations
+        """
         movies = Movies()
         response = movies.get_recommendations(
             movie_id = 3,
@@ -107,7 +123,9 @@ class TestTMDb_Movies(unittest.TestCase):
         assert str(response) != str(ERROR_MOVIE)
 
     def test_movie_get_release_dates(self):
-        """Test movie get changes query"""
+        """
+        test movies get_release_dates
+        """
         movies = Movies()
         response = movies.get_release_dates(
             movie_id = 3,
@@ -117,7 +135,9 @@ class TestTMDb_Movies(unittest.TestCase):
         assert str(response) != str(ERROR_MOVIE)
 
     def test_movie_get_reviews(self):
-        """Test movie get changes query"""
+        """
+        test movies get_reviews
+        """
         movies = Movies()
         response = movies.get_reviews(
             movie_id = 200,
@@ -127,7 +147,9 @@ class TestTMDb_Movies(unittest.TestCase):
         assert str(response) != str(ERROR_MOVIE)
 
     def test_movie_get_similar(self):
-        """Test movie get changes query"""
+        """
+        test movies get_similar_movies
+        """
         movies = Movies()
         response = movies.get_similar_movies(
             movie_id = 200,
@@ -138,7 +160,9 @@ class TestTMDb_Movies(unittest.TestCase):
         assert str(response) != str(ERROR_MOVIE)
 
     def test_movie_translations(self):
-        """Test movie get changes query"""
+        """
+        test movies get_translations
+        """
         movies = Movies()
         response = movies.get_translations(
             movie_id = 200,
@@ -148,7 +172,9 @@ class TestTMDb_Movies(unittest.TestCase):
         assert str(response) != str(ERROR_MOVIE)
 
     def test_movie_get_video(self):
-        """Test movie get changes query"""
+        """
+        test movies get_videos
+        """
         movies = Movies()
         response = movies.get_videos(
             movie_id = 200,
@@ -159,7 +185,9 @@ class TestTMDb_Movies(unittest.TestCase):
         assert str(response) != str(ERROR_MOVIE)
 
     def test_movie_latest(self):
-        """Test movie get changes query"""
+        """
+        test movies get_latest
+        """
         movies = Movies()
         response = movies.get_latest(
             datatype = PrettifyDatatype()
@@ -168,7 +196,9 @@ class TestTMDb_Movies(unittest.TestCase):
         assert str(response) != str(ERROR_MOVIE)
 
     def test_movie_now_playing(self):
-        """Test movie get changes query"""
+        """
+        test movies get_now_playing
+        """
         movies = Movies()
         response = movies.get_now_playing(
             datatype = PrettifyDatatype()
@@ -178,7 +208,9 @@ class TestTMDb_Movies(unittest.TestCase):
 
 
     def test_movie_popular(self):
-        """Test movie get changes query"""
+        """
+        test movies get_popular
+        """
         movies = Movies()
         response = movies.get_popular(
             datatype = PrettifyDatatype()
@@ -187,7 +219,9 @@ class TestTMDb_Movies(unittest.TestCase):
         assert str(response) != str(ERROR_MOVIE)
 
     def test_movie_top_rated(self):
-        """Test movie get changes query"""
+        """
+        test movies get_top_rated
+        """
         movies = Movies()
         response = movies.get_top_rated(
             datatype = PrettifyDatatype()
@@ -197,7 +231,9 @@ class TestTMDb_Movies(unittest.TestCase):
 
 
     def test_movie_upcoming(self):
-        """Test movie get changes query"""
+        """
+        test movies get_upcoming
+        """
         movies = Movies()
         response = movies.get_upcoming(
             datatype = PrettifyDatatype()

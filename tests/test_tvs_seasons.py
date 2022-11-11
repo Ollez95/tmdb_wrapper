@@ -20,7 +20,9 @@ class TestTMDb_TvSeason(unittest.TestCase):
         self.authentication.initialize_session_id(type_session="user_session")
 
     def test_get_details(self):
-        """Test something."""
+        """
+        test tv_season get_details
+        """
     
         tvs_season = TvSeasons()
 
@@ -34,7 +36,9 @@ class TestTMDb_TvSeason(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_account_settings(self):
-        """Test something."""
+        """
+        test tv_season get_account_settings
+        """
     
         tvs_season = TvSeasons()
 
@@ -48,7 +52,9 @@ class TestTMDb_TvSeason(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_aggregate_credits(self):
-        """Test something."""
+        """
+        test tv_season get_aggregate_credits
+        """
     
         tvs_season = TvSeasons()
 
@@ -62,7 +68,9 @@ class TestTMDb_TvSeason(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_changes(self):
-        """Test something."""
+        """
+        test tv_season get_changes
+        """
 
         tvs_season = TvSeasons()
 
@@ -78,7 +86,9 @@ class TestTMDb_TvSeason(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_credits(self):
-        """Test something."""
+        """
+        test tv_season get_credits
+        """
      
         tvs_season = TvSeasons()
 
@@ -92,7 +102,9 @@ class TestTMDb_TvSeason(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_external_ids(self):
-        """Test something."""
+        """
+        test tv_season get_external_ids
+        """
      
         tvs_season = TvSeasons()
 
@@ -106,7 +118,9 @@ class TestTMDb_TvSeason(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_images(self):
-        """Test something."""
+        """
+        test tv_season get_images
+        """
     
         tvs_season = TvSeasons()
 
@@ -120,8 +134,10 @@ class TestTMDb_TvSeason(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_translations(self):
-        """Test something."""
- 
+        """
+        test tv_season get_translations
+        """
+
         tvs_season = TvSeasons()
 
         response = tvs_season.get_translations(
@@ -134,7 +150,9 @@ class TestTMDb_TvSeason(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_videos(self):
-        """Test something."""
+        """
+        test tv_season get_videos
+        """
 
         tvs_season = TvSeasons()
 

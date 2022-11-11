@@ -21,7 +21,9 @@ class TestTMDb_Discovers(unittest.TestCase):
     
     
     def test_discover_movie(self):
-        """Test something."""
+        """
+        test discover get_movie_discover
+        """
         
         discovers = Discovers()
 
@@ -32,7 +34,9 @@ class TestTMDb_Discovers(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_discover_tv(self):
-        """Test something."""
+        """
+        test discover get_tv_discover
+        """
         
         discovers= Discovers()
 

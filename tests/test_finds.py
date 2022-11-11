@@ -18,7 +18,9 @@ class TestTMDb_Finds(unittest.TestCase):
         self.tmdb.region = REGION
 
     def test_get_find_by_id(self):
-        """Test something."""
+        """
+        test finds get_find_by_id
+        """
 
         finds = Finds()
 
@@ -32,7 +34,9 @@ class TestTMDb_Finds(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_find_by_imdb(self):
-        """Test something."""
+        """
+        test finds get_find_by_imdb
+        """
 
         finds = Finds()
 
@@ -45,7 +49,9 @@ class TestTMDb_Finds(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_find_by_tvdb(self):
-        """Test something."""
+        """
+        test finds get_find_by_tvdb
+        """
 
         finds = Finds()
 
@@ -58,7 +64,9 @@ class TestTMDb_Finds(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_find_by_freebase_mid(self):
-        """Test something."""
+        """
+        test finds get_find_by_freebase_mid
+        """
 
         finds = Finds()
 
@@ -71,7 +79,9 @@ class TestTMDb_Finds(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_find_by_tvrage_id(self):
-        """Test something."""
+        """
+        test finds get_find_by_tvrage_id
+        """
 
         finds = Finds()
 
@@ -84,7 +94,9 @@ class TestTMDb_Finds(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_find_by_facebook_id(self):
-        """Test something."""
+        """
+        test finds get_find_by_facebook_id
+        """
 
         finds = Finds()
 
@@ -97,7 +109,9 @@ class TestTMDb_Finds(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_find_by_instagram_id(self):
-        """Test something."""
+        """
+        test finds get_find_by_instagram_id
+        """
 
         finds = Finds()
 
@@ -110,7 +124,9 @@ class TestTMDb_Finds(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_find_by_twitter_id(self):
-        """Test something."""
+        """
+        test finds get_find_by_twitter_id
+        """
 
         finds = Finds()
 

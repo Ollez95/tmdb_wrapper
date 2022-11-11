@@ -17,7 +17,9 @@ class TestTMDb_Trendings(unittest.TestCase):
         tmdb.region = REGION
 
     def test_get_trendings(self):
-        """Test something."""
+        """
+        test trendings get_trendings
+        """
 
         trendigns = Trendings()
 

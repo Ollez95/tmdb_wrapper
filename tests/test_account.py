@@ -26,19 +26,25 @@ class TestTMDb_Account(unittest.TestCase):
         self.authentication.initialize_session_id(type_session="user_session")
 
     def test_account(self):
-        """Set up API keys"""
+        """
+        test account
+        """
         account = Account()
         print(account.account_id)
 
     def test_account_get_details(self):
-        """Set up API keys"""
+        """
+        test account get_details
+        """
         account = Account()
         response = account.get_details()
         print(response)
         assert response != ERROR_MOVIE
     
     def test_account_get_created_lists(self):
-        """Set up API keys"""
+        """
+        test account get_created_lists
+        """
         account = Account()
         print(account.account_id)
         response = account.get_created_lists()
@@ -46,7 +52,9 @@ class TestTMDb_Account(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_account_get_favourite_movies(self):
-        """Set up API keys"""
+        """
+        test account get_favourite_movies
+        """
         account = Account()
         print(account.account_id)
         response = account.get_favourite_movies()
@@ -54,7 +62,9 @@ class TestTMDb_Account(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_account_get_favourite_tvs(self):
-        """Set up API keys"""
+        """
+        test account get_favourite_tvs
+        """
         account = Account()
         print(account.account_id)
         response = account.get_favourite_tvs()
@@ -62,7 +72,9 @@ class TestTMDb_Account(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_account_post_mark_as_favourite(self):
-        """Set up API keys"""
+        """
+        test account post_mark_as_favourite
+        """
         account = Account()
         print(account.account_id)
         response = account.post_mark_as_favourite(
@@ -74,7 +86,9 @@ class TestTMDb_Account(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_account_get_rated_movies(self):
-        """Set up API keys"""
+        """
+        test account get_rated_movies
+        """
         account = Account()
         print(account.account_id)
         response = account.get_rated_movies()
@@ -82,7 +96,9 @@ class TestTMDb_Account(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_account_get_tv_shows(self):
-        """Set up API keys"""
+        """
+        test account get_tv_shows
+        """
         account = Account()
         print(account.account_id)
         response = account.get_tv_shows()
@@ -90,7 +106,9 @@ class TestTMDb_Account(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_account_get_tv_episodes(self):
-        """Set up API keys"""
+        """
+        test account get_tv_episodes
+        """
         account = Account()
         print(account.account_id)
         response = account.get_tv_episodes()
@@ -98,7 +116,9 @@ class TestTMDb_Account(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_account_get_movies_watchlist(self):
-        """Set up API keys"""
+        """
+        test account get_movies_watchlist
+        """
         account = Account()
         print(account.account_id)
         response = account.get_movies_watchlist()
@@ -106,7 +126,9 @@ class TestTMDb_Account(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_account_get_tv_show_watchlist(self):
-        """Set up API keys"""
+        """
+        test account get_tv_show_watchlist
+        """
         account = Account()
         print(account.account_id)
         response = account.get_tv_show_watchlist()
@@ -114,7 +136,9 @@ class TestTMDb_Account(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_account_post_add_to_watchlist(self):
-        """Set up API keys"""
+        """
+        test account post_add_to_watchlist
+        """
         account = Account()
         print(account.account_id)
         response = account.post_add_to_watchlist(

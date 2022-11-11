@@ -20,7 +20,9 @@ class TestTMDb_Networks(unittest.TestCase):
         tmdb.region = REGION
 
     def test_get_network_details(self):
-        """Test something."""
+        """
+        test network get_network_details
+        """
 
         networks = Networks()
 
@@ -33,7 +35,9 @@ class TestTMDb_Networks(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_network_alternative_names(self):
-        """Test something."""
+        """
+        test network get_network_alternative_names
+        """
 
         networks = Networks()
 
@@ -46,7 +50,9 @@ class TestTMDb_Networks(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_network_images(self):
-        """Test something."""
+        """
+        test network get_network_images
+        """
 
         networks = Networks()
 

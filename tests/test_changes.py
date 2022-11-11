@@ -15,7 +15,9 @@ class TestTMDb_Changes(unittest.TestCase):
         self.tmdb.region = REGION
 
     def test_movie_changes(self):
-        """Test something."""
+        """
+        test changes get_movie_changes
+        """
         certifications = Changes()
         response = certifications.get_movie_changes(
             datatype = PrettifyDatatype()
@@ -24,7 +26,9 @@ class TestTMDb_Changes(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_tv_changes(self):
-        """Test something."""
+        """
+        test changes get_tv_changes
+        """
         certifications = Changes()
         response = certifications.get_tv_changes(
             datatype = PrettifyDatatype()
@@ -32,7 +36,9 @@ class TestTMDb_Changes(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_person_changes(self):
-        """Test something."""
+        """
+        test changes get_person_changes
+        """
         certifications = Changes()
         response = certifications.get_person_changes(
             datatype = PrettifyDatatype()

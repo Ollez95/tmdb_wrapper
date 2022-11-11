@@ -21,12 +21,16 @@ class TestTMDb_GuestSessions(unittest.TestCase):
         self.authentication.initialize_session_id(type_session="guest_session")
 
     def test_account(self):
-        """Set up API keys"""
+        """
+        test guest_session
+        """
         guest_session = GuestSessions()
         print(guest_session)
 
     def test_get_guest_session_rated_movies(self):
-        """Set up API keys"""
+        """
+        test guest_session get_guest_session_rated_movies
+        """
         guest_session = GuestSessions()
         response = guest_session.get_guest_session_rated_movies(
             datatype = PrettifyDatatype()
@@ -35,7 +39,9 @@ class TestTMDb_GuestSessions(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_guest_session_rated_tv_shows(self):
-        """Set up API keys"""
+        """
+        test guest_session get_guest_session_rated_tv_shows
+        """
         guest_session = GuestSessions()
         response = guest_session.get_guest_session_rated_tv_shows(
             datatype = PrettifyDatatype()
@@ -44,7 +50,9 @@ class TestTMDb_GuestSessions(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_guest_session_rated_tv_episodes(self):
-        """Set up API keys"""
+        """
+        test guest_session get_guest_session_rated_tv_episodes
+        """
         guest_session = GuestSessions()
         response = guest_session.get_guest_session_rated_tv_episodes(
             datatype = PrettifyDatatype()

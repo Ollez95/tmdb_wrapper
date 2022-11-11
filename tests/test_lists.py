@@ -20,7 +20,9 @@ class TestTMDb_Lists(unittest.TestCase):
         self.authentication.initialize_session_id(type_session="user_session")
 
     def test_get_list_details(self):
-        """Test something."""
+        """
+        test lists get_list_details
+        """
         
         lists = Lists()
 
@@ -30,7 +32,9 @@ class TestTMDb_Lists(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_list_items_status(self):
-        """Test something."""
+        """
+        test lists get_list_items_status
+        """
         
         lists = Lists()
 
@@ -44,7 +48,9 @@ class TestTMDb_Lists(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_post_create_lists(self):
-        """Test something."""
+        """
+        test lists post_create_list
+        """
         
         lists = Lists()
 
@@ -59,7 +65,9 @@ class TestTMDb_Lists(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_post_add_movie_to_list(self):
-        """Test something."""
+        """
+        test lists post_add_movie_to_list
+        """
         
         lists = Lists()
         print('a')
@@ -72,7 +80,9 @@ class TestTMDb_Lists(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_post_remove_movie(self):
-        """Test something."""
+        """
+        test lists post_remove_movie
+        """
         
         lists = Lists()
         response = lists.post_remove_movie(
@@ -84,7 +94,9 @@ class TestTMDb_Lists(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_post_clear_list(self):
-        """Test something."""
+        """
+        test lists post_clear_list
+        """
         
         lists = Lists()
         response = lists.post_clear_list(
@@ -95,7 +107,9 @@ class TestTMDb_Lists(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_delete_list(self):
-        """Test something."""
+        """
+        test lists delete_list
+        """
         
         lists = Lists()
         response = lists.delete_list(

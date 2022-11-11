@@ -15,7 +15,9 @@ class TestTMDb_TvEpisodesGroup(unittest.TestCase):
 
 
     def test_get_details(self):
-        """Test something."""
+        """
+        test tv_episode_groups get_details
+        """
  
         tvs_episodes_group = TvEpisodeGroups()
 

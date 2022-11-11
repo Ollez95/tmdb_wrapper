@@ -21,7 +21,9 @@ class TestTMDb_Keywords(unittest.TestCase):
     
     
     def test_get_keyword(self):
-        """Test something."""
+        """
+        test keyword get_keyword
+        """
         
         keywords = Keywords()
 
@@ -32,7 +34,9 @@ class TestTMDb_Keywords(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_keyword_movie(self):
-        """Test something."""
+        """
+        test keyword get_keyword_movie
+        """
         
         keywords = Keywords()
 

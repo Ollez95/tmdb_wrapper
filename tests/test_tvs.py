@@ -20,7 +20,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         self.authentication.initialize_session_id(type_session="user_session")
 
     def test_get_details(self):
-        """Test something."""
+        """
+        test tv get_details
+        """
         
         tvs = Tvs()
 
@@ -33,7 +35,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_account_states(self):
-        """Test something."""
+        """
+        test tv get_account_states
+        """
         
         tvs = Tvs()
 
@@ -46,7 +50,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_aggregate_credits(self):
-        """Test something."""
+        """
+        test tv get_aggregate_credits
+        """
         
         tvs = Tvs()
 
@@ -59,7 +65,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_alternative_titles(self):
-        """Test something."""
+        """
+        test tv get_alternative_titles
+        """
         
         tvs = Tvs()
 
@@ -72,7 +80,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_changes(self):
-        """Test something."""
+        """
+        test tv get_changes
+        """
         
         tvs = Tvs()
 
@@ -87,7 +97,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_content_ratings(self):
-        """Test something."""
+        """
+        test tv get_content_ratings
+        """
         
         tvs = Tvs()
 
@@ -100,7 +112,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_credits(self):
-        """Test something."""
+        """
+        test tv get_credits
+        """
         
         tvs = Tvs()
 
@@ -113,7 +127,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_episode_group(self):
-        """Test something."""
+        """
+        test tv get_episode_group
+        """
         
         tvs = Tvs()
 
@@ -126,7 +142,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_external_ids(self):
-        """Test something."""
+        """
+        test tv get_external_ids
+        """
         
         tvs = Tvs()
 
@@ -139,7 +157,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_images(self):
-        """Test something."""
+        """
+        test tv get_images
+        """
         
         tvs = Tvs()
 
@@ -152,7 +172,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_keywords(self):
-        """Test something."""
+        """
+        test tv get_keywords
+        """
         
         tvs = Tvs()
 
@@ -165,7 +187,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_recommendations(self):
-        """Test something."""
+        """
+        test tv get_recommendations
+        """
         
         tvs = Tvs()
 
@@ -178,7 +202,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_reviews(self):
-        """Test something."""
+        """
+        test tv get_reviews
+        """
         
         tvs = Tvs()
 
@@ -191,7 +217,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
         
     def test_get_screened_theatrically(self):
-        """Test something."""
+        """
+        test tv get_screened_theatrically
+        """
         
         tvs = Tvs()
 
@@ -204,7 +232,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_similar(self):
-        """Test something."""
+        """
+        test tv get_similar
+        """
         
         tvs = Tvs()
 
@@ -217,7 +247,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_translations(self):
-        """Test something."""
+        """
+        test tv get_translations
+        """
         
         tvs = Tvs()
 
@@ -230,7 +262,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_videos(self):
-        """Test something."""
+        """
+        test tv get_videos
+        """
         
         tvs = Tvs()
 
@@ -243,7 +277,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_post_rate_video(self):
-        """Test something."""
+        """
+        test tv post_rate_video
+        """
         
         tvs = Tvs()
 
@@ -257,7 +293,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_delete_video(self):
-        """Test something."""
+        """
+        test tv delete_video
+        """
         
         tvs = Tvs()
 
@@ -270,7 +308,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def get_latest(self):
-        """Test something."""
+        """
+        test tv get_latest
+        """
         
         tvs = Tvs()
 
@@ -281,7 +321,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def get_airing_today(self):
-        """Test something."""
+        """
+        test tv get_airing_today
+        """
         
         tvs = Tvs()
 
@@ -292,7 +334,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def get_on_air(self):
-        """Test something."""
+        """
+        test tv get_on_air
+        """
         
         tvs = Tvs()
 
@@ -303,7 +347,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
     
     def get_popular(self):
-        """Test something."""
+        """
+        test tv get_popular
+        """
         
         tvs = Tvs()
 
@@ -314,7 +360,9 @@ class TestTMDb_Tvs(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def get_top_rated(self):
-        """Test something."""
+        """
+        test tv get_top_rated
+        """
         
         tvs = Tvs()
 

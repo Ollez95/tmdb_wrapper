@@ -17,7 +17,9 @@ class TestTMDb_Searches(unittest.TestCase):
         tmdb.region = REGION
 
     def test_get_search_company(self):
-        """Test something."""
+        """
+        test searches get_search_company
+        """
 
         searches = Searches()
 
@@ -30,7 +32,9 @@ class TestTMDb_Searches(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_search_collections(self):
-        """Test something."""
+        """
+        test searches get_search_collections
+        """
 
         searches = Searches()
 
@@ -43,7 +47,9 @@ class TestTMDb_Searches(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_search_keywords(self):
-        """Test something."""
+        """
+        test searches get_search_keywords
+        """
 
         searches = Searches()
 
@@ -56,7 +62,9 @@ class TestTMDb_Searches(unittest.TestCase):
         assert response != ERROR_MOVIE
     
     def test_get_search_movie(self):
-        """Test something."""
+        """
+        test searches get_search_movie
+        """
 
         searches = Searches()
 
@@ -69,7 +77,9 @@ class TestTMDb_Searches(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_multi_search(self):
-        """Test something."""
+        """
+        test searches get_multi_search
+        """
 
         searches = Searches()
 
@@ -82,7 +92,9 @@ class TestTMDb_Searches(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_search_people(self):
-        """Test something."""
+        """
+        test searches get_search_people
+        """
 
         searches = Searches()
 
@@ -95,7 +107,9 @@ class TestTMDb_Searches(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_get_search_tv_show(self):
-        """Test something."""
+        """
+        test searches get_search_tv_show
+        """
 
         searches = Searches()
 

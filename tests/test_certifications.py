@@ -15,7 +15,9 @@ class TestTMDb_Certifications(unittest.TestCase):
         self.tmdb.region = REGION
 
     def test_movie_certifications(self):
-        """Test something."""
+        """
+        test certifications get_movie_certifications
+        """
         certifications = Certifications()
 
         print(certifications.api_key)
@@ -27,7 +29,9 @@ class TestTMDb_Certifications(unittest.TestCase):
         assert response != ERROR_MOVIE
 
     def test_tv_certifications(self):
-        """Test something."""
+        """
+        test certifications get_tv_certifications
+        """
         certifications = Certifications()
         response = certifications.get_tv_certifications(
             datatype = PrettifyDatatype()
