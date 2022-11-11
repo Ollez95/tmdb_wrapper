@@ -1,7 +1,6 @@
 import pickle
 from datetime import datetime
 from typing import Callable
-
 from tmdb_wrapper.tmdb.request import Request
 
 

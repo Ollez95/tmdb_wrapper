@@ -121,8 +121,6 @@ class Account(Authentication):
             headers= {'content-type': 'application/x-www-form-urlencoded'},
             session_id = self.session_id)
 
-        
-
         return datatype.to_datatype(parse_data = parse_data, model_data = Status)
 
     def get_rated_movies(

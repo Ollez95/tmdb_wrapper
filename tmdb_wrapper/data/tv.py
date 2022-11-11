@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Optional
+from typing import Optional, Union
 from tmdb_wrapper.data.collection import Collection
 from tmdb_wrapper.data.credit import Credits
 
@@ -255,7 +255,7 @@ class TvSeasonRated:
 class TvSeasonAccountState:
     id: Optional[int]
     episode_number: Optional[int]
-    rated: Optional[TvSeasonRated]
+    rated: Optional[Union[bool,TvSeasonRated]]
 
 @dataclass
 class TvSeasonAccountStates:
@@ -265,7 +265,7 @@ class TvSeasonAccountStates:
 @dataclass
 class TvSeasonEpisodeState:
     id: Optional[int]
-    rated: Optional[bool]
+    rated: Optional[Union[bool,dict]]
 
 @dataclass
 class TvEpisodeSeason:

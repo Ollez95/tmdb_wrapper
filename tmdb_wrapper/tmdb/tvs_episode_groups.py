@@ -1,5 +1,5 @@
 from typing import Any
-from tmdb_wrapper.data.tv import TvEpisodeGroup, TvSeason
+from tmdb_wrapper.data.tv import TvEpisodeGroup
 from tmdb_wrapper.tmdb.base import TMDb
 from tmdb_wrapper.tmdb.datatype import Datatype, ModelDatatype
 
@@ -9,10 +9,11 @@ class TvEpisodeGroups(TMDb):
 
     def get_details(
         self,
-        id: int = None,
+        id_group: int = None,
         datatype : Datatype = ModelDatatype()) -> Any:
         '''
-        Get the details of a TV episode group. Groups support 7 different types which are enumerated as the following:
+        Get the details of a TV episode group. Groups support 7 different types which are enumerated
+        as the following:
 
         Original air date
         Absolute
@@ -27,6 +28,6 @@ class TvEpisodeGroups(TMDb):
 
         parse_data = self.request_data(
             request_operation = GetRequest(),
-            path = f"/tv/episode_group/{id}")
+            path = f"/tv/episode_group/{id_group}")
 
         return datatype.to_datatype(parse_data = parse_data, model_data = TvEpisodeGroup)

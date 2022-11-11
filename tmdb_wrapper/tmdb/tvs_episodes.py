@@ -1,16 +1,22 @@
 from typing import Any
 from tmdb_wrapper.data.external_id import ExternalIDs
 from tmdb_wrapper.data.image import Images
-from tmdb_wrapper.data.tv import TvChanges, TvCredits, TvEpisodeSeason, TvResponse, TvSeason, TvSeasonAccountStates, TvSeasonEpisodeState, TvTranslations, TvVideos
+from tmdb_wrapper.data.tv import TvChanges, TvCredits, TvEpisodeSeason, TvResponse, TvSeasonEpisodeState, TvTranslations, TvVideos
 from tmdb_wrapper.tmdb.authentication import Authentication
 from tmdb_wrapper.tmdb.base import TMDb
 from tmdb_wrapper.tmdb.datatype import Datatype, ModelDatatype
+from tmdb_wrapper.tmdb.excep import TMDbException
 from tmdb_wrapper.utils.helpers import init_session_type
 from tmdb_wrapper.utils.constants import url_header_encoded
 
 from .request import DeleteRequest, GetRequest, PostRequest
 
 class TvEpisodes(Authentication):
+
+    def __init__(self):
+        super().__init__()
+        if self.session_id is None:
+            raise TMDbException("You need to initialize a guest session or user session'")
 
     def get_details(
         self,
@@ -182,7 +188,7 @@ class TvEpisodes(Authentication):
         tv_id: int,
         datatype : Datatype = ModelDatatype(),
         season_number: int = None,
-        episode_number: int = None,)
+        episode_number: int = None,
         value: float = 0.5) -> Any:
         '''
         A valid session or guest session ID is required. You can read more about how this works .

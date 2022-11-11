@@ -3,13 +3,18 @@ from tmdb_wrapper.data.external_id import ExternalIDs
 from tmdb_wrapper.data.image import Images
 from tmdb_wrapper.data.tv import TvChanges, TvCredits, TvSeason, TvSeasonAccountStates, TvTranslations, TvVideos
 from tmdb_wrapper.tmdb.authentication import Authentication
-from tmdb_wrapper.tmdb.base import TMDb
 from tmdb_wrapper.tmdb.datatype import Datatype, ModelDatatype
+from tmdb_wrapper.tmdb.excep import TMDbException
 from tmdb_wrapper.utils.helpers import init_session_type
 
 from .request import GetRequest
 
 class TvSeasons(Authentication):
+
+    def __init__(self):
+        super().__init__()
+        if self.session_id is None:
+            raise TMDbException("You need to initialize a guest session or user session'")
 
     def get_details(
         self,
