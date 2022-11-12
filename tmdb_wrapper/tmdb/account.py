@@ -22,6 +22,7 @@ class Account(Authentication):
             authentication.initialize_session_id(type_session='user_session')""")))
         
 
+    
     def get_details(
         self,
         datatype : Datatype = OriginalDatatype()) -> Any:

@@ -110,6 +110,8 @@ class TestTMDb_Lists(unittest.TestCase):
         """
         test lists delete_list
         """
+        self.authentication.initialize_session_id(type_session="user_session")
+        
         lists = Lists()
         response = lists.delete_list(
             list_id=8226293

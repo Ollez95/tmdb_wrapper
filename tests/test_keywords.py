@@ -18,13 +18,13 @@ class TestTMDb_Keywords(unittest.TestCase):
         tmdb.api_key = API_KEY
         tmdb.language = LANGUAGE
         tmdb.region = REGION
-    
-    
+
+
     def test_get_keyword(self):
         """
         test keyword get_keyword
         """
-        
+   
         keywords = Keywords()
 
         response = keywords.get_keyword(
@@ -37,7 +37,7 @@ class TestTMDb_Keywords(unittest.TestCase):
         """
         test keyword get_keyword_movie
         """
-        
+    
         keywords = Keywords()
 
         response = keywords.get_keyword_movie(
